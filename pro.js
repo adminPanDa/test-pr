@@ -660,4 +660,4 @@ const w = ['./img/up1.png','./img/up2.png','./img/up.png'];
 
 
 
-client.login('NDAyMzc3MTQ0MDQwMjkyMzYy.DT32dQ.n5nifr71Thv4sUFAT381cTUrO_A');
+client.login(process.env.BOT_TOKEN);
