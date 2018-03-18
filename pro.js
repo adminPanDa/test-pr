@@ -375,8 +375,8 @@ var prefix =`!`;
     }
     var wallpapers = {
                 1: {
-                    src: 'walls/p1.jpg',
-                    price: 1000,
+                    src: 'walls/starwars.png',
+                    price: 1,
                 },
                 2: {
                     src: 'walls/p2.jpg',
