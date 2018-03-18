@@ -411,12 +411,12 @@ var prefix =`!`;
         if(!args[0]) {
             let embed = new Discord.RichEmbed()
 .setDescription('**ورقم الخلفية .buy لـشراء خلفية آستخدم آمر  ** ')
-.addField('Profile Sky','Price : $1000 Number: 1')
+.addField('Profile starwars','Price : $1 Number: 1')
 .addField('Profile Sun','Preice: $1800 Number: 2')
 .addField('Profile Tree','Price : $2300 Number: 3')
 .addField('Profile Mount','Price: $3000 Number: 4')
 .addField('Profile Old Tree','Price: $4000 Number: 5')
- .setImage("https://cdn.discordapp.com/attachments/396995597732675585/407187661216940032/Untitled-1.png");
+ .setImage("");
             message.channel.send({embed: embed});
         } else {
 
