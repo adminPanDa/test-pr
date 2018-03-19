@@ -359,24 +359,24 @@ var prefix =`!`;
     }
     var wallpapers = {
                 1: {
-                    src: 'walls/p1.jpg',
-                    price: 1000,
+                    src: 'walls/1414.jpg',
+                    price: 1,
                 },
                 2: {
-                    src: 'walls/p2.jpg',
-                    price: 1800,
+                    src: 'walls/1515.jpg',
+                    price: 2,
                 },
                 3: {
-                    src: 'walls/p3.jpg',
-                    price: 2300,
+                    src: 'walls/7777.jpg',
+                    price: 3,
                 },
                 4: {
-                    src: 'walls/p4.jpg',
-                    price: 3000,
+                    src: 'walls/9999.jpg',
+                    price: 4,
                 },
                 5: {
-                    src: 'walls/p5.jpg',
-                    price: 4000,
+                    src: 'walls/44444.jpg',
+                    price: 5,
                 },
             }
     if(!dataPro[message.author.id]) {
