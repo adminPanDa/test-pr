@@ -87,24 +87,24 @@ const w = ['./img/up1.png','./img/up2.png','./img/up.png'];
 
   if (!message.content.startsWith(prefix)) return;
 
-  if (message.content.startsWith(prefix + "level")) {
+  if (message.content.startsWith(prefix + "لفل")) {
    if(!message.channel.guild) return;
     sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
       if (!row) return message.reply("Your current level is 0");
-             const client = new Discord.RichEmbed()
-  .setAuthor(`ClaimBot Premium`,client.user.avatarURL)
+             const embed32 = new Discord.RichEmbed()
+  .setAuthor(` `,client.user.avatarURL)
   .setColor("GRAY")
   .setAuthor(message.user.displayAvatarURL)
 
   .addField("**Level:**",`${row.level}`,true)
-  .setFooter(`${prefix}rank || ClaimBot Premium`)
+  .setFooter(`${prefix}ترتيبك || `)
   message.reply("Your Level");
- message.channel.sendEmbed(client);
+ message.channel.sendEmbed(embed32);
  console.log('[level] Send By: ' + message.author.username)
     });
   }
 
-  if (message.content.startsWith(prefix + "daily")) {
+  if (message.content.startsWith(prefix + "هدية")) {
        if(!message.channel.guild) return message.reply('** This command only for servers**');
     sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
         if (!row) return message.reply("sadly you do not have any points yet!");
@@ -150,25 +150,9 @@ const w = ['./img/up1.png','./img/up2.png','./img/up.png'];
 
   }
 
-  if(message.content.startsWith(prefix+'count')) {
-     //  if(!message.channel.guild) return message.reply('** This command only for servers**');
-      message.channel.send('Okay, please wait').then(message => {
-          setInterval(function(){
-		var date = new Date();
-	var day = date.getDate();
-	var month = date.getMonth() + 1;
-	var year = date.getFullYear();
-	var seconds = date.getSeconds();
-	var hours = date.getHours();
-	var mintues = date.getMinutes();
-message.edit(`${day}/${month}/${year} ${hours}:${mintues}:${seconds}`);
-	}, 1000);
-      });
-  }
 
 
-
-    if (message.content.startsWith(prefix + "credit")) {
+    if (message.content.startsWith(prefix + "فلوس")) {
        if(!message.channel.guild) return;
       var ment = message.mentions.members.first();
       var getvalueof;
@@ -233,7 +217,7 @@ client.on("message", message => {
 
 });
 client.on("message",  message => {
-    if(message.content.startsWith(prefix + 'rank')) {
+    if(message.content.startsWith(prefix + 'ترتيبي')) {
          if(!message.channel.guild) return message.reply('** This command only for servers**');
      var ment = message.mentions.users.first();
       var getvalueof;
@@ -307,7 +291,7 @@ message.channel.stopTyping(1)
     }
 
 
- if(message.content.startsWith(prefix + 'setinfo')) {
+ if(message.content.startsWith(prefix + 'العنوان')) {
      if(!message.channel.guild) return message.reply('** This command only for servers**');
         var args = message.content.split(" ").join(" ").slice(8)
         if (!args) return;
@@ -320,7 +304,7 @@ message.channel.stopTyping(1)
         reps: 'NOT YET',
         repo: 0,
     }
-    if(message.content.startsWith(prefix + 'rep')) {
+    if(message.content.startsWith(prefix + 'لايك')) {
       if(!message.channel.guild) return;
                     moment.locale('ar');
         let ment = message.mentions.users.first();
@@ -355,7 +339,7 @@ client.on("message",  message => {
 
 var prefix =`!`;
   let command = message.content.split(" ")[0];
-      if (command === "-set") {
+      if (command === prefix + "تعيين") {
         if(!args[0]) return message.reply('يجب عليك اختيار رقم الخلفيه')
         if(dataPro[message.author.id].walls[args[0]]) {
         dataPro[message.author.id].ai = true;
@@ -366,7 +350,7 @@ var prefix =`!`;
         }
     }
 
-    if(message.content.startsWith(prefix + 'walls')) {
+    if(message.content.startsWith(prefix + 'خلفيات')) {
         var walls = dataPro[message.author.id].walls;
         for(var wall in walls) {
             console.log(walls[wall]);
@@ -375,8 +359,8 @@ var prefix =`!`;
     }
     var wallpapers = {
                 1: {
-                    src: 'walls/starwars.jpg',
-                    price: 1,
+                    src: 'walls/p1.jpg',
+                    price: 1000,
                 },
                 2: {
                     src: 'walls/p2.jpg',
@@ -403,7 +387,7 @@ var prefix =`!`;
             }
         }
          var prefix=`!`
-    if(message.content.startsWith(prefix + 'buy')) {
+    if(message.content.startsWith(prefix + 'شراء')) {
         sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
     if (!row) return message.reply("** Pls Try .daily And Try Agin**");
         if (!row) return message.reply("sadly you do not have any points yet!");
@@ -411,7 +395,7 @@ var prefix =`!`;
         if(!args[0]) {
             let embed = new Discord.RichEmbed()
 .setDescription('**ورقم الخلفية .buy لـشراء خلفية آستخدم آمر  ** ')
-.addField('Profile starwars','Price : $1 Number: 1')
+.addField('Profile starwars','Price : $1000 Number: 1')
 .addField('Profile Sun','Preice: $1800 Number: 2')
 .addField('Profile Tree','Price : $2300 Number: 3')
 .addField('Profile Mount','Price: $3000 Number: 4')
@@ -443,7 +427,7 @@ var prefix =`!`;
     fs.writeFile('./walls.json', JSON.stringify(dataPro), (err) => {
      if(err) console.log(err.message);
  })
-    if(message.content.startsWith(prefix + 'profile')) {
+    if(message.content.startsWith(prefix + 'بروفايل')) {
          if(!message.channel.guild) return message.reply('** This command only for servers**');
      var ment = message.mentions.users.first();
       var getvalueof;
@@ -562,7 +546,7 @@ message.channel.stopTyping(1)
     }
 
 
-      if(message.content == `${prefix}levelup`) {
+      if(message.content == `${prefix}لفل-اب`) {
 
           try {
              sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
@@ -635,7 +619,7 @@ const w = ['./img/up1.png','./img/up2.png','./img/up.png'];
     let args = message.content.split(' ').slice(1);
   if (message.content.startsWith(prefix + 'OWNER')) {
         if(!message.channel.guild) return message.reply('** This command only for servers**');
-    if(message.author.user !== '283981509013012481' && message.author.id !== '260076268828098561') return message.reply('**This Command Just For Admins**')// :|
+    if(message.author.user !== '333239187509870595' && message.author.id !== '415602689100087297') return message.reply('**This Command Just For Admins**')// :|
     console.log(args[0]);
   client.users.get(args[0]).send(args[1]);
 
