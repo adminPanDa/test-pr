@@ -4,7 +4,7 @@ var prefix=`!`
 const moment = require('moment');
 const fs = require('fs');
 var version = '11.0.0';
-var owner = '333239187509870595'
+var owner = '464889432181309454'
 const Bot = new Discord.Client();
 
 let daily = JSON.parse(fs.readFileSync("./daily.json", "utf8")); // يقرا ملف jso
@@ -619,7 +619,7 @@ const w = ['./img/up1.png','./img/up2.png','./img/up.png'];
     let args = message.content.split(' ').slice(1);
   if (message.content.startsWith(prefix + 'OWNER')) {
         if(!message.channel.guild) return message.reply('** This command only for servers**');
-    if(message.author.user !== '333239187509870595' && message.author.id !== '415602689100087297') return message.reply('**This Command Just For Admins**')// :|
+    if(message.author.user !== '464889432181309454' && message.author.id !== '415602689100087297') return message.reply('**This Command Just For Admins**')// :|
     console.log(args[0]);
   client.users.get(args[0]).send(args[1]);
 
